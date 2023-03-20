@@ -6,8 +6,6 @@
 
 package io.github.chadj2.mesh;
 
-import java.awt.Color;
-
 import javax.vecmath.Matrix4f;
 import javax.vecmath.Point3f;
 import javax.vecmath.Vector3f;
@@ -38,8 +36,7 @@ public class BaseBuilder {
      * @return
      */
     public static Color colorCreateTransparent(Color color, float alpha) {
-        int alphaInt = Math.round(alpha*255);
-        Color alColor = new Color(color.getRed(), color.getGreen(), color.getBlue(), alphaInt);
+        Color alColor = new Color(color.r, color.g, color.b, alpha);
         return alColor;
     }
 
@@ -51,7 +48,7 @@ public class BaseBuilder {
      * @return 
      */
     public static Color colorAdjustSatBr(Color color, float satFactor, float brFactor) {
-        float[] hsb = Color.RGBtoHSB(color.getRed(), color.getGreen(), color.getBlue(), null);
+        float[] hsb = Color.RGBtoHSB(color.r, color.g, color.b, null);
         hsb[1] = Math.min(satFactor * hsb[1], 1f);
         hsb[2] = Math.min(brFactor * hsb[2], 1f);
         
@@ -60,7 +57,7 @@ public class BaseBuilder {
         int red = (colorNum >> 16) & 0xFF;
         int green = (colorNum >> 8) & 0xFF;
         int blue = (colorNum >> 0) & 0xFF;
-        return  new Color(red, green, blue, color.getAlpha());
+        return  new Color(red, green, blue, color.a);
     }
 
     /** Mesh name used in metadata descriptions */

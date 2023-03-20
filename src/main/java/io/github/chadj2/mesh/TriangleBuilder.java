@@ -6,7 +6,6 @@
 
 package io.github.chadj2.mesh;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -223,10 +222,10 @@ public class TriangleBuilder extends TopologyBuilder {
              _lineEnd.scaleAdd(_size, _normal, _lineStart);
              
              MeshVertex _vStart = _builder.newVertex(_lineStart);
-             _vStart.setColor(Color.WHITE);
+             _vStart.setColor(new Color(1f,1f,1f,1f));
              
              MeshVertex _vEnd = _builder.newVertex(_lineEnd);
-             _vEnd.setColor(Color.WHITE);
+             _vEnd.setColor(new Color(1f,1f,1f,1f));
         }
         
         _builder.build(_geoWriter);

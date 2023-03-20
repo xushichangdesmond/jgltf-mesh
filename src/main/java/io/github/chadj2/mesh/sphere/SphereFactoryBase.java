@@ -6,17 +6,16 @@
 
 package io.github.chadj2.mesh.sphere;
 
-import java.awt.Color;
-
 import javax.vecmath.Point3f;
 
 import de.javagl.jgltf.impl.v2.Node;
 import io.github.chadj2.mesh.BaseBuilder;
+import io.github.chadj2.mesh.Color;
 
 public abstract class SphereFactoryBase extends BaseBuilder {
 
     private float _radius = 1f;
-    private Color _color = Color.WHITE;
+    private Color _color = new Color(1f,1f,1f,1f);
     private int _lod = 2;
     
     public SphereFactoryBase(String _name) {

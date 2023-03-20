@@ -6,12 +6,12 @@
 
 package io.github.chadj2.mesh.sphere;
 
-import java.awt.Color;
 import java.util.HashMap;
 
 import javax.vecmath.Point3f;
 import javax.vecmath.Vector3f;
 
+import io.github.chadj2.mesh.Color;
 import io.github.chadj2.mesh.MeshVertex;
 import io.github.chadj2.mesh.TriangleBuilder;
 
@@ -55,7 +55,7 @@ public class IcosphereBuilder extends TriangleBuilder {
     
     public IcosphereBuilder(String _name) {
         super(_name);
-        this.setColor(Color.WHITE);
+        this.setColor(new Color(1f,1f,1f,1f));
         
         // don't invert X axis
         //this.getTransform().m00 = 1;
@@ -78,7 +78,7 @@ public class IcosphereBuilder extends TriangleBuilder {
      * @param color
      */
     public void setColor(Color color) {
-        this._hsbVals = Color.RGBtoHSB(color.getRed(), color.getGreen(), color.getBlue(), null);
+        this._hsbVals = Color.RGBtoHSB(color.r, color.g, color.b, null);
         this._color = color;
     }
     

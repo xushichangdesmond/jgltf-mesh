@@ -6,13 +6,13 @@
 
 package io.github.chadj2.mesh.sphere;
 
-import java.awt.Color;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.vecmath.Point3f;
 
+import io.github.chadj2.mesh.Color;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -79,10 +79,10 @@ public class SphereFactory extends SphereFactoryBase {
 
         if(LOG.isDebugEnabled()) {
             String colorStr = String.format("r=%d,g=%d,b=%d,a=%d", 
-                    this.getColor().getRed(), 
-                    this.getColor().getGreen(), 
-                    this.getColor().getBlue(), 
-                    this.getColor().getAlpha());
+                    this.getColor().r,
+                    this.getColor().g,
+                    this.getColor().b,
+                    this.getColor().a);
             LOG.debug("Add Sphere: pos=<{}> radius=<{}> color=<{}> ", pos, this.getRadius(), colorStr);
         }
         
@@ -105,7 +105,7 @@ public class SphereFactory extends SphereFactoryBase {
      * @throws Exception
      */
     protected int getMeshColorLod() throws Exception {
-        String key = String.format("%X-%d", this.getColor().getRGB(), this.getMaxDetail());
+        String key = String.format("%X-%d", this.getColor().argb(), this.getMaxDetail());
         Integer meshIdx = this._colorLodToMeshIdx.get(key);
         if(meshIdx != null) {
             // found a cached mesh for this color/lod combo

@@ -5,7 +5,6 @@
  */
 package io.github.chadj2.mesh.buffer;
 
-import java.awt.Color;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 
@@ -14,6 +13,7 @@ import de.javagl.jgltf.impl.v2.BufferView;
 import de.javagl.jgltf.impl.v2.GlTF;
 import de.javagl.jgltf.impl.v2.MeshPrimitive;
 import de.javagl.jgltf.model.GltfConstants;
+import io.github.chadj2.mesh.Color;
 import io.github.chadj2.mesh.MeshGltfWriter;
 
 /**
